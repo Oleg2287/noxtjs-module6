@@ -4,6 +4,7 @@ import NoteList from "@/components/NoteList/NoteList";
 // 2. Робимо функцію асинхронною та отримуємо дані
 const Notes = async () => {
   const response = await getNotes();
+ 
 // 3. Відображаємо список нотаток
   return (
     <section>
@@ -14,3 +15,4 @@ const Notes = async () => {
 }
 
 export default Notes;
+
