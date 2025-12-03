@@ -1,6 +1,13 @@
-const About = () => {
-  return (
-    <div>About</div>
-  );
+import { Metadata } from 'next';
+import { redirect } from 'next/navigation';
+
+export const metadata: Metadata = {
+  title: 'About page',
 };
+
+const About = () => {
+  redirect('/');
+  return null;
+};
+
 export default About;
