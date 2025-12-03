@@ -8,7 +8,7 @@ export default async function DocsPage({ params }: Props) {
   return (
     <div>
       <h1>Docs page</h1>
-      <p>Current path: {params.slug?.join(" / ") || "home"}</p>
+      <p>Current path: {slug.join(" / ") || "home"}</p>
     </div>
   );
 }
