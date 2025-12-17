@@ -16,10 +16,19 @@ export type NoteListResponse = {
 };
 
 //axios.defaults.baseURL = "https://next-v1-notes-api.goit.study";
-axios.defaults.baseURL = 'http://localhost:3000/api'
+//axios.defaults.baseURL = 'http://localhost:3000/api'
+
+// Видаляємо стару логіку baseURL
+// axios.defaults.baseURL = 'http://localhost:3000/api'
+
+// Створюємо інстанс axios
+const nextServer = axios.create({
+  baseURL: 'http://localhost:3000/api',
+  withCredentials: true, // дозволяє axios працювати з cookie
+});
 
 export const getNotes = async (categoryId?: string) => {
-  const res = await axios.get<NoteListResponse>('/notes', {
+  const res = await nextServer.get<NoteListResponse>('/notes', {
     params: { categoryId },
   });
   return res.data;
